@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "NULL X CRASHER Bot Website"
+version = "1.0.0"
+id = "artifacts/null-x-crasher"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21985
+
+[services.development]
+run = "pnpm --filter @workspace/null-x-crasher run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/null-x-crasher", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/null-x-crasher/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21985"
+BASE_PATH = "/"
