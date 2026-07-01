@@ -42,6 +42,18 @@ export function Intro({ onEnter }: { onEnter: () => void }) {
     return () => clearTimeout(timer);
   }, [showReveal, revealIndex]);
 
+  // Lock body scroll while the intro is shown so the background page never peeks through
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    const originalTouchAction = document.body.style.touchAction;
+    document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.touchAction = originalTouchAction;
+    };
+  }, []);
+
   const handleEnter = () => {
     playIntro();
     onEnter();
