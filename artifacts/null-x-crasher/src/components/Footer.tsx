@@ -1,37 +1,61 @@
 import { ExternalLink, Github, Send } from "lucide-react";
+import { Link } from "wouter";
 
 export function Footer() {
   return (
     <footer className="w-full bg-black border-t border-primary/20 py-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-black to-black pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between relative z-10">
-        <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
-          <h2 className="font-display font-bold text-2xl text-white tracking-widest mb-2">SYSTEM<span className="text-primary">.CORE</span></h2>
-          <p className="font-mono text-zinc-500 text-sm">© 2025 ALL RIGHTS RESERVED.</p>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* ZENITH LAB promo */}
+        <div className="mb-10 p-6 md:p-8 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 to-transparent flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-center md:text-left">
+            <h3 className="font-display font-bold text-2xl text-white tracking-widest mb-2">
+              ZENITH <span className="text-primary">LAB</span>
+            </h3>
+            <p className="font-mono text-sm text-zinc-400">
+              Need a premium website like this? ZENITH LAB builds elite digital experiences.
+            </p>
+          </div>
+          <a
+            href="https://zenith-labs-ten.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-2 px-8 py-3 bg-primary text-black font-display font-bold text-sm tracking-widest uppercase overflow-hidden hover:shadow-[0_0_30px_rgba(123,0,255,0.5)] transition-shadow"
+          >
+            <span className="relative z-10">Visit ZENITH LAB</span>
+            <ExternalLink className="w-4 h-4 relative z-10" />
+          </a>
         </div>
 
-        <div className="flex flex-col gap-4 text-center md:text-right">
-          <a 
-            href="https://t.me/MR_BARRY_DEE" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
-          >
-            <Send className="w-4 h-4 text-primary group-hover:shadow-glow rounded-full" />
-            <span className="font-mono text-sm">Created by @MR_BARRY_DEE</span>
-            <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </a>
-          <a 
-            href="https://t.me/Olivia8885" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
-          >
-            <Terminal className="w-4 h-4 text-primary group-hover:shadow-glow rounded-full" />
-            <span className="font-mono text-sm">Web Developer: @Olivia8885</span>
-            <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </a>
+        <div className="flex flex-col md:flex-row items-center justify-between">
+          <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
+            <h2 className="font-display font-bold text-2xl text-white tracking-widest mb-2">SYSTEM<span className="text-primary">.CORE</span></h2>
+            <p className="font-mono text-zinc-500 text-sm">© 2025 ALL RIGHTS RESERVED.</p>
+          </div>
+
+          <div className="flex flex-col gap-4 text-center md:text-right">
+            <a 
+              href="https://t.me/MR_BARRY_DEE" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+            >
+              <Send className="w-4 h-4 text-primary group-hover:shadow-glow rounded-full" />
+              <span className="font-mono text-sm">Created by @MR_BARRY_DEE</span>
+              <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+            <a 
+              href="https://t.me/Olivia8885" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+            >
+              <Terminal className="w-4 h-4 text-primary group-hover:shadow-glow rounded-full" />
+              <span className="font-mono text-sm">Web Developer: @Olivia8885</span>
+              <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

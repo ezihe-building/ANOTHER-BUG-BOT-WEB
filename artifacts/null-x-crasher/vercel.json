@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist/public",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/audio/:file", "destination": "/audio/:file" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
