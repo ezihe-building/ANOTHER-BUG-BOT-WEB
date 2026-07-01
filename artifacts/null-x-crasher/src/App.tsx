@@ -7,6 +7,7 @@ import { Route, Switch, Router as WouterRouter } from 'wouter';
 // Import Pages
 import NullXCrasher from './pages/NullXCrasher';
 import BarryXMd from './pages/BarryXMd';
+import Songs from './pages/Songs';
 
 // Import Layout Components
 import { Nav } from './components/Nav';
@@ -22,6 +23,7 @@ function Router() {
         <Switch>
           <Route path="/" component={NullXCrasher} />
           <Route path="/barry-x-md" component={BarryXMd} />
+          <Route path="/songs" component={Songs} />
           <Route component={NotFound} />
         </Switch>
       </main>
